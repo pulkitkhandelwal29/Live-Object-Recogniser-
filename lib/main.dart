@@ -1,7 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import './HomePage.dart';
-import 'package:camera/camera.dart';
+import './MySplashPage.dart';
 
 late List<CameraDescription> cameras;
 
@@ -16,8 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Object Recogniser App',
-      home: HomePage(),
+      title: 'Object Detection App',
+      home: MySplashPage(),
     );
   }
 }
