@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:camera/camera.dart';
 
+import 'package:tflite/tflite.dart';
 import './main.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,9 +34,17 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  loadModel() async {
+    await Tflite.loadModel(
+      model: "assets/model.tflite",
+      labels: "assets/labels.txt",
+    );
+  }
+
   @override
   void initState() {
     super.initState();
+    loadModel();
     initCamera();
   }
 
